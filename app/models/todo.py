@@ -1,5 +1,5 @@
-from .extensions import db
 from datetime import datetime
+from app.extensions import db
 
 class Task(db.Model):
     __tablename__ = "tasks"
@@ -9,4 +9,3 @@ class Task(db.Model):
     description = db.Column(db.Text)
     is_completed = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    

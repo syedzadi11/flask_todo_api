@@ -75,14 +75,14 @@ Json
  **GET /tasks**
 Response: List of all tasks in JSON
 
- ### Get Single Task 
+Get Single Task 
 
- **GET /tasks**
+GET /tasks
 Response: JSON of a single task
 
-###Update Task
+Update Task
 
-**PUT /tasks**
+PUT /tasks
 Request Body (JSON):
 
 Json
@@ -94,15 +94,15 @@ Json
 Response: Updated task JSON
 
 
-###Delete Task
+Delete Task
 
-**DELETE /tasks**
+DELETE /tasks
 Response: Success message 
 
 **Setup / How to Run**
 **Create MySQL database
 
-###Sql
+Sql
 CREATE DATABASE todo_db;
 Set DATABASE_URL in .env
 

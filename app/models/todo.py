@@ -1,10 +1,15 @@
 from datetime import datetime
 from app.extensions import db
+import uuid
 
 class Task(db.Model):
     __tablename__ = "tasks"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(
+        db.String(36),
+        primary_key=True,
+        default=lambda: str(uuid.uuid4())  
+    )
     title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text)
     is_completed = db.Column(db.Boolean, default=False)

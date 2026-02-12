@@ -5,6 +5,7 @@ from app.routes.todo_routes import api_bp
 import os
 from app.models.user import User
 from app.models.todo import Task
+from app.auth import auth_bp
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -21,6 +22,13 @@ def create_app():
     jwt.init_app(app)
     bcrypt.init_app(app)
 
+    #  Todo Blueprint
     app.register_blueprint(api_bp, url_prefix="/api")
+
+    #  Auth Blueprint 
+    app.register_blueprint(auth_bp, url_prefix="/auth")
+
+    app.config["JWT_SECRET_KEY"] = "super-secret-key"
+
 
     return app
